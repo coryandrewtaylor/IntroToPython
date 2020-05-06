@@ -79,7 +79,7 @@ foo
 # [1]  [2] [3] [4]
 ```
 
-1. Keyword `def`--signals that we're _def_ining a function
+1. Keyword `def`--signals that we're *def*ining a function
 2. Function name
 3. Argument list
 4. Colon
@@ -169,7 +169,7 @@ bar  # "Hello, y'all!"
 
 ## Zero Arguments
 
-Call a zero-argument function the way you'd expect: its name and empty parentheses.
+Call a zero-argument function the way you'd expect: its name and empty parentheses
 
 ```python
 def four():
@@ -252,7 +252,7 @@ foo
 
 * _Property_: Variables stored in a class
 * _Method_: Functions stored in a class
-* _Dunder method_: Special methods that start with two underscores (_d_ouble _under_score)
+* _Dunder method_: Special methods that start with two underscores (*d*ouble *under*score)
 * _Constructor_:
   * The general contractor that builds a house based on its blueprints
   * In Python, a dunder method called `__init__()`
@@ -371,13 +371,13 @@ class Ziploc:
 ## Instantiating
 
 ```python
+# All three are equivalent:
 sandwich_bag = Ziploc(size='sandwich', contents='PB & J', is_open=False)
 sandwich_bag = Ziploc('sandwich', contents='PB & J', is_open=False)
-
 sandwich_bag = Ziploc.__init__('sandwich', contents='PB & J', is_open=False)
 ```
 
-Note: We don't supply anything for `self`. Python does that for us.
+N.B.: We don't supply anything for `self`. Python does that for us.
 
 ---
 
