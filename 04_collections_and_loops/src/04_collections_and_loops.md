@@ -207,7 +207,7 @@ foo = 'abcd'
 
 ## Tuple Unpacking
 
-* Elements of a tuple can be assigned to different variables in a signle assignment statement
+* Elements of a tuple can be assigned to different variables in a single assignment statement
 * Number of variables must match number of tuple elements
 
 ```python
