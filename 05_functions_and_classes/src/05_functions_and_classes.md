@@ -72,6 +72,20 @@ foo
 
 ---
 
+## Building Blocks of Function Def'n
+
+```python
+  def greet( ) :
+# [1]  [2] [3] [4]
+```
+
+1. Keyword `def`--signals that we're _def_ining a function
+2. Function name
+3. Argument list
+4. Colon
+
+---
+
 ## Defining Functions (2)
 
 One argument and a return value
@@ -94,6 +108,15 @@ foo
 * It should return `x * 2`.
 * Use `increment(x)` as a model.
 
+```python
+def double(x):
+    return x * 2
+
+def other_double(x):
+    _doubled = x * 2
+    return _doubled
+```
+
 ---
 
 ## Function Exercise 2
@@ -101,6 +124,15 @@ foo
 * Write a function called `add(x, y)`.
 * It should return `x + y`.
 * Use `increment(x)` as a model.
+
+```python
+def add(x, y):
+    return x + y
+
+# Why doesn't this work?
+def add(x):
+    return x + y
+```
 
 ---
 
@@ -113,8 +145,9 @@ def make_greeting(name='world'):
     return 'Hello, ' + name + '!'
 
 
+# Look ma, no arguments!
 foo = make_greeting()
-foo  # 'Hello, world!"
+foo  # 'Hello, world!'
 
 bar = make_greeting("y'all")
 bar  # "Hello, y'all!"
@@ -159,7 +192,7 @@ def concat_3(a, b, c):
     return a + b + c
 
 
-foo = sum_3('1', '2', '3')
+foo = concat_3('1', '2', '3')
 foo
 # '123'
 ```
@@ -176,9 +209,9 @@ def concat_3(a, b, c):
     return a + b + c
 
 
-foo = concat_3(c=1, a=2, b=3)
+foo = concat_3(c='1', a='2', b='3')
 foo
-# 'abc'
+# '231'
 ```
 
 ---
@@ -190,6 +223,7 @@ foo
 
     ```python
     concat_3('1', c='3', b='2')
+    # '123'
     ```
 
 * Invalid:
@@ -218,10 +252,10 @@ foo
 
 * _Property_: Variables stored in a class
 * _Method_: Functions stored in a class
-* _Dunder method_: Special methods that start with two underscores
+* _Dunder method_: Special methods that start with two underscores (_d_ouble _under_score)
 * _Constructor_:
-  * General contractor that builds a house based on its blueprints
-  * In Python, a dunder method called `__init__`
+  * The general contractor that builds a house based on its blueprints
+  * In Python, a dunder method called `__init__()`
 
 ---
 
@@ -294,7 +328,8 @@ class Ziploc:
 
 ```python
 class Ziploc:
-    def __init__(self, contents=None, is_open=True):
+    def __init__(self, size, contents=None, is_open=True):
+        self.size = size
         self.contents = contents
         self.is_open = is_open
 
@@ -312,7 +347,7 @@ class Ziploc:
 
 * Add a method called `close()` to `Ziploc`.
 * Use `Ziploc.open()` as a model.
-* Accept zero arguments.
+* Accept zero arguments (except for `self`).
 * Check whether `self.is_open is True`. If so, set `self.is_open = False`.
 * Return no value.
 
@@ -321,7 +356,7 @@ class Ziploc:
 ## Class Exercise 3
 
 * Add a method called `get_contents()` to `Ziploc`.
-* Accept zero arguments.
+* Accept zero arguments (except for `self`).
 * Call `self.open()`.
 * Set `_contents = self.contents`.
 * Set `self.contents = None`.
@@ -336,7 +371,10 @@ class Ziploc:
 ## Instantiating
 
 ```python
-sandwich_bag = Ziploc(size='sandwich', contents='PB & J')
+sandwich_bag = Ziploc(size='sandwich', contents='PB & J', is_open=False)
+sandwich_bag = Ziploc('sandwich', contents='PB & J', is_open=False)
+
+sandwich_bag = Ziploc.__init__('sandwich', contents='PB & J', is_open=False)
 ```
 
 Note: We don't supply anything for `self`. Python does that for us.
@@ -358,7 +396,7 @@ sandwich_bag.contents = 'Ham & Swiss'
 ## Using Methods
 
 ```python
-yum = sandwich_bag.get_contents()
+yum = sandwich_bag.get_contents()  # Method call--note parens
 
 yum  # 'Ham & Swiss'
 sandwich_bag.contents  # None
