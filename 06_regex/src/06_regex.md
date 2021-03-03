@@ -157,6 +157,7 @@ Table adapted from [1]
 | `?`      | 0 or 1            |
 | `{m}`    | exactly *m* times |
 | `{m, n}` | *m* to *n* times  |
+| `{m,}`   | *m* times or more |
 
 ---
 
@@ -217,7 +218,7 @@ my_email = 'foo@bar.edu'
 
 ## `re.sub()`
 
-* Like `str.replace() only better.
+* Like `str.replace()` only better.
 
 ---
 
