@@ -59,7 +59,7 @@ date: May 8, 2020
 ## Character Literals
 
 * Everyday strings "are the simplest regular expressions; they simply match themselves." [1]
-* The pattern `John` will match `'John Doe`', but not `'Jon Snow'` or `'john doe'`.
+* The pattern `John` will match `'John Doe'`', but not `'Jon Snow'` or `'john doe'`.
 
 ---
 
@@ -150,12 +150,13 @@ Table adapted from [1]
 
 ## Quantifiers
 
-| Pattern  | Quantity         |
-|----------|------------------|
-| `*`      | 0 or more        |
-| `+`      | 1 or more        |
-| `?`      | 0 or 1           |
-| `{m, n}` | *m* to *n* times |
+| Pattern  | Quantity          |
+|----------|-------------------|
+| `*`      | 0 or more         |
+| `+`      | 1 or more         |
+| `?`      | 0 or 1            |
+| `{m}`    | exactly *m* times |
+| `{m, n}` | *m* to *n* times  |
 
 ---
 
