@@ -3,6 +3,7 @@
 ## Lesson 1: Hello, world!
 
 1. Install and configure environment
+1. No homework or tests; just follow along in class and come prepared to ask questions about the previous session's material
 1. Thoughts on programming
 1. Main idea in Python: Objects
     1. Objects can be things (data)
