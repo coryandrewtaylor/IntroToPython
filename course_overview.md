@@ -2,8 +2,25 @@
 
 ## Lesson 1: Hello, world!
 
+1. About me
+1. Introductions
+1. Q & A: How do you learn best?
+1. Course overview
+    1. Homework/test/grading policy--No homework or tests; just follow along in class and come prepared to ask questions about the previous session's material
+    1. Per AIM's policy, attendance will be taken
+    1. Class time
+        1. Four hours
+        1. First hour/hour and a half is review of previous lesson
+        1. 10-minute breaks each hour
 1. Install and configure environment
-1. No homework or tests; just follow along in class and come prepared to ask questions about the previous session's material
+    1. Windows: Show file extensions and hidden items
+    1. Github
+    1. Github Desktop
+    1. Git
+    1. Anaconda
+    1. VS Code
+    1. Set up VS Code
+        1. Extensions
 1. Thoughts on programming
 1. Main idea in Python: Objects
     1. Objects can be things (data)
