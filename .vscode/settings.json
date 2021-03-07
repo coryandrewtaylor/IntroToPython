@@ -17,5 +17,10 @@
     },
     "markdown.extension.tableFormatter.normalizeIndentation": true,
     "markdown.extension.toc.githubCompatibility": true,
-    "markdown.extension.toc.unorderedList.marker": "*"
+    "markdown.extension.toc.unorderedList.marker": "*",
+    "python.linting.mypyEnabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.enabled": true,
+    "python.formatting.provider": "black",
+    "python.languageServer": "Pylance",
 }
