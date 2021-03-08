@@ -100,8 +100,14 @@
 
 ## Lesson 5: Classes
 
-## Lesson 6: Catch up and review, gentle intro to data
+## Lesson 6: Modern software development
 
-## Lesson 7: pandas, part 1
+1. Unit testing
+1. Writing good tests
+1. TDD
+1. Git best practices
+    1. branching and merging
 
-## Lesson 8: pandas: part 2
+## Lesson 7: Intro to data, pandas pt. 1
+
+## Lesson 8: pandas pt. 2

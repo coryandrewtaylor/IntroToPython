@@ -130,7 +130,7 @@ Make a PB&J sandwich
 ## What is Python?
 
 1. A user-friendly, general-purpose programming language
-   * User-friendly: Much easier to use than most other popular languages
+   * User-friendly: Much easier to use than many other popular languages
    * General-purpose: Can be used to write all sorts of programs
 2. An interpreter that translates Python code into CPU instructions
 
