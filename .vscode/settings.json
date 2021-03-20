@@ -8,6 +8,7 @@
     "editor.formatOnPaste": true,
     "editor.multiCursorModifier": "ctrlCmd",
     "markdownlint.config": {
+        "MD007": false,
         "MD013": false,
         "MD025": false,
         "MD026": false,
@@ -16,8 +17,9 @@
         "MD041": false
     },
     "markdown.extension.tableFormatter.normalizeIndentation": true,
-    "markdown.extension.toc.githubCompatibility": true,
     "markdown.extension.toc.unorderedList.marker": "*",
+    "markdown.extension.orderedList.marker": "ordered",
+    "markdown.extension.orderedList.autoRenumber": true,
     "python.linting.mypyEnabled": true,
     "python.linting.pylintEnabled": false,
     "python.linting.enabled": true,
