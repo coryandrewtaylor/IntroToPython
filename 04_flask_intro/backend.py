@@ -1,38 +1,27 @@
-from typing import Dict, Tuple, Union
-
 from flask import Flask, request
-
 
 app = Flask(__name__)
 
 
-ErrorResponse = Tuple[Dict[str, Union[str, int]], int]
-MathResponse = Dict[str, float]
-
-
-def error(code: int, message: str) -> ErrorResponse:
-    _err = {"error_code": code, "error": message}
-    return _err, code
-
-
 @app.route("/")
 @app.route("/greeting")
-def greet() -> Dict[str, str]:
-    _response = {"greeting": "Hello, world!"}
-    return _response
+def greet():
+    _greeting = {"greeting": "Hello, world!"}
+    return _greeting
 
 
 @app.route("/greeting/<user>")
-def greet_user(user: str) -> Dict[str, str]:
+def greet_user(user):
     _response = {"greeting": "Hello", "user": user}
     return _response
 
 
 @app.route("/math/sum", methods=["POST"])
-def add_by_api() -> Union[MathResponse, ErrorResponse]:
+def add_by_api():
     _to_add = request.form.getlist("add")
-    if _to_add is not None:
+    _all_addable = all(n.isnumeric() for n in _to_add)
+    if _all_addable and _to_add is not None:
         _sum = sum(float(n) for n in _to_add)
-        return {"sum": _sum}
+        return {"sum": _sum}, 200
     else:
-        return error(400, 'Bad request: "add" not present in request body')
+        return 'Bad request', 400
