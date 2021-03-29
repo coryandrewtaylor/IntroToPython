@@ -9,6 +9,7 @@ requests = "*"
 cryptography = ">=3.3"
 pyyaml = ">=5.4"
 lxml = ">=4.6.2"
+flask-sqlalchemy = "*"
 
 [dev-packages]
 mypy = "*"
@@ -16,6 +17,10 @@ pytest = "*"
 black = "==20.8b1"
 pylint = ">=2.7.0"
 types-requests = "*"
+pytest-flask = "*"
+ipykernel = "*"
+coverage = "*"
+flask-intro = {path = "."}
 
 [requires]
 python_version = "3.8"
