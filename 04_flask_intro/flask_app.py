@@ -1,5 +1,3 @@
-from flask import Flask
+from flask_intro import create_app
 
-from flask_intro import configure_routes
-
-app = configure_routes(Flask(__name__))
+app = create_app()

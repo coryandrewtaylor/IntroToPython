@@ -16,10 +16,12 @@ def test_greet(client):
 
 def test_greet_user(client):
     for _user in some_strs:
+        _data = f"Hello, {_user}!".encode()
         _route = f"/greeting/{_user}"
         r = client.get(_route)
+
         assert r.status_code == 200
-        assert r.json == {"greeting": "Hello", "user": _user}
+        assert _data in r.data
 
 
 def test_add_by_api(client):

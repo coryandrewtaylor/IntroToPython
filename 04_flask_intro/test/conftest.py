@@ -1,12 +1,10 @@
 import pytest
-from flask import Flask
 
-from flask_intro.backend import configure_routes
+from flask_intro import create_app
 
 @pytest.fixture
 def app():
-    _app = Flask("testing")
-    configure_routes(_app)
+    _app = create_app()
     _app.testing = True
     return _app
 
