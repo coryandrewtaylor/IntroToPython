@@ -2,20 +2,29 @@ from flask import Flask, request, render_template
 from flask_bootstrap import Bootstrap
 
 
-def create_app():
+def create_app(csrf_key_path):
     app = Flask(__name__)
     bootstrap = Bootstrap(app)
 
+    with open(csrf_key_path) as fo:
+        app.secret_key = fo.read()
+
+    @app.errorhandler(404)
+    def page_not_found(e):
+        return render_template("404.html"), 404
+
     @app.route("/")
-    @app.route("/greeting")
+    # @app.route("/greeting")
     def greet():
         _greeting = {"greeting": "Hello, world!"}
         return _greeting
 
     
+    @app.route("/greeting")
     @app.route("/greeting/<user>")
-    def greet_user(user):
-        return render_template("user.html", user=user)
+    def greet_user(user=None):
+        _user = user if user else "world"
+        return render_template("user.html", user=_user)
 
 
     @app.route("/api/v1/greeting/<user>")
@@ -24,7 +33,7 @@ def create_app():
         return _response
 
 
-    @app.route("/math/sum", methods=["POST"])
+    @app.route("/api/v1/math/sum", methods=["POST"])
     def add_by_api():
         """
         {"add": [list of numbers]}
