@@ -10,6 +10,7 @@ cryptography = ">=3.3"
 pyyaml = ">=5.4"
 lxml = ">=4.6.2"
 flask-sqlalchemy = "*"
+flask-bootstrap = "*"
 
 [dev-packages]
 mypy = "*"
