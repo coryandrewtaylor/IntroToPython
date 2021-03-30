@@ -1,6 +1,10 @@
 from flask import Flask, request, render_template
 from flask_bootstrap import Bootstrap
 
+from .util import _is_number
+
+__all__ = ["create_app"]
+
 
 def create_app(csrf_key_path):
     app = Flask(__name__)
@@ -9,15 +13,15 @@ def create_app(csrf_key_path):
     with open(csrf_key_path) as fo:
         app.secret_key = fo.read()
 
+
     @app.errorhandler(404)
     def page_not_found(e):
         return render_template("404.html"), 404
 
+
     @app.route("/")
-    # @app.route("/greeting")
-    def greet():
-        _greeting = {"greeting": "Hello, world!"}
-        return _greeting
+    def index():
+        return render_template("index.html")
 
     
     @app.route("/greeting")
@@ -42,9 +46,9 @@ def create_app(csrf_key_path):
             [type]: [description]
         """
         _to_add = request.form.getlist("add")
-        _all_addable = all(n.isnumeric() for n in _to_add)
+        _all_addable = all(_is_number(n) for n in _to_add)
         
-        if bool(_to_add) is True and _all_addable is True:
+        if _to_add and _all_addable:
             _sum = sum(float(n) for n in _to_add)
             return {"sum": _sum}, 200
         else:
