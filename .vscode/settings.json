@@ -25,4 +25,5 @@
     "python.linting.enabled": true,
     "python.formatting.provider": "black",
     "python.languageServer": "Pylance",
+    "python.pythonPath": "C:\\Users\\ctaylor\\.virtualenvs\\04_flask_intro-ds77gicX\\Scripts\\python.exe",
 }
